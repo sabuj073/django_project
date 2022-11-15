@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Post
+from django.core.mail import send_mail
 
 
 # Create your views here.
@@ -18,5 +19,14 @@ def submit(request):
         post.user_address = request.POST.get('user_address')
         post.html_format = request.POST.get('html_format')
         post.save()
+
+        # send_mail(
+        #     'Subject here',
+        #     'Here is the message.',
+        #     'from@example.com',
+        #     [request.POST.get('user_email')],
+        #     fail_silently=False,
+        #     )
+        
         
     return render(request,'submit.html')

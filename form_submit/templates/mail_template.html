@@ -1,0 +1,120 @@
+<html lang="en">
+   {% load static %}
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Revolving Fund | Regisration Form</title>
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+   </head>
+   <body>
+      <header>
+         <img src="{% static 'images/logo.png' %}" width="100" height="120">		 
+      </header>
+      <div class="wrapper">
+        <form action="/submit" method="post">
+            {% csrf_token %}
+         <main>
+            <div class="info">
+               <h3>سلطة الطاقة والموارد الطبيعية الفلسطينية</h3>
+               <h2>طلب تسجيل الحصول على نظام طاقة شمسية</h2>
+               <div>
+                  <img src="{% static 'images/system.png' %}" width = "500" height="300">
+               </div>
+               <p>يقوم هذا المشروع على دعم المواطنيين الفلسطيين في منطقة الضفة الغربية على تركيب أنظمة الطاقة الشمسية من خلال منحة الصندوق الدوار الممولة من قبل البنك الدولي للحكومة الفلسطيني عبر سلطة الطاقة والموارد الطبيعية الفلسطينية</p>
+            </div>
+            <form action="#" method="GET">
+               <fieldset class="contact-info">
+                  <div class="container">
+                     <legend>معلومات الأسرة</legend>
+                     <p>
+                        <label for="name">الإسم الرباعي</label>   
+                        <input type="text" id="name" value="{{ user_name }}" readonly name="user_name" title="يرجى تعبئة الإسم الرباعي" required> 
+                     </p>
+                     <p>
+                        <label for="email">رقم الهوية</label>   
+                        <input type="email" id="email" name="user_email" value="{{ user_email }}" readonly title="يرجى تعبئة رقم الهوية" required> 
+                     </p>
+                     <p>
+                        <label for="zipcode">عدد أفراد الأسرة</label>
+                        <input type="number" id="zipcode" value="{{ user_zipcode }}" readonly name="user_zipcode" required>
+                     </p>
+                     <p>
+                        <label for="city">معيل الأسرة</label>  
+                        <input type="text" id="city" name="user_city" value="{{ user_city }}" readonly required> 
+                     </p>
+                     <p>
+                        <label for="state">المدينة</label>
+                        <input type="text" id="user_state" name="user_state" value="{{ user_state }}" readonly required> 
+                     </p>
+                     <p>
+                        <label for="address">العنوان</label>   
+                        <input type="text" id="address"  value="{{ user_address }}" readonly name="user_address" required>
+                     </p>
+                     <p>
+                        <label for="mobile_number">رقم المحمول</label>
+                        <input type="number" id="mobile_number" value="{{ mobile_number }}" readonly name="mobile_number" required>
+                     </p>
+                     <p>
+                        <label for="whatsapp_number">رقم الواتساب</label>
+                        <input type="number" id="whatsapp_number" value="{{ whatsapp_number }}" readonly  name="whatsapp_number" required>
+                     </p>
+                  </div>
+               </fieldset>
+               <fieldset class="newsletter">
+                  <div class="container">
+                     <legend>معلومات المنشأة</legend>
+                     <p>موزع الكهرباء في منطقتك</p>
+                     <div>
+                        <label>
+                        <input type="number" id="mobile_number" value="{{ distributor }}" readonly name="distributor" required>
+                     </div>
+                     <p>نوع العداد</p>
+                     <div class="radio-btn">
+                        <p>
+                        <input type="number" id="mobile_number" value="{{ counter_type }}" readonly name="counter_type" required>
+                        </p>
+                     </div>
+                     <p>ما هو معدل إستهلاك الكهرباء الشهري</p>
+                     <p>
+                        <input type="text" id="mobile_number" value="{{ counter_type }}" readonly name="electricity_consumption" required>
+                     </p>
+                     <p>ملكية السطح</p>
+                     <div class="radio-btn">
+                        <p>
+                           <input type="text" id="html" value="{{ surface_ownership }}" readonly name="surface_ownership">
+                        </p>
+                     </div>
+                     <p>ما هو نوع سطح المنشأة المنوي تركيب النظام عليها؟</p>
+                     <p>
+                        <input type="text" id="type_of_roof" value="{{ type_of_roof }}" readonly name="type_of_roof">
+                     </p>
+                     <p>هل لديك أي ملاحظات أو معلومات تود إعلامنا بها ؟</p>
+                     <p>
+                        <textarea id="interest" name="user_interest" value="{{ user_interest }}" readonly required></textarea> <br/>
+                     </p>
+                  </div>
+               </fieldset>
+            </form>
+         </main>
+        </form>
+      </div>
+   </body>
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script>
+      $("input:checkbox").on('click', function() {
+  var $box = $(this);
+  if ($box.is(":checked")) {
+    var group = "input:checkbox[name='" + $box.attr("name") + "']";
+    $(group).prop("checked", false);
+    $box.prop("checked", true);
+  } else {
+    $box.prop("checked", false);
+  }
+});
+   </script>
+</html>

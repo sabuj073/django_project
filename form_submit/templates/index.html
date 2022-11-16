@@ -39,43 +39,43 @@
                      </p>
                      <p>
                         <label for="zipcode">عدد أفراد الأسرة</label>
-                        <input type="text" id="zipcode" name="user_zipcode" required>
+                        <input type="number" id="zipcode" name="user_zipcode" required>
                      </p>
                      <p>
                         <label for="city">معيل الأسرة</label>  
-                        <input type="text" id="city" name="user_city" > 
+                        <input type="text" id="city" name="user_city" required> 
                      </p>
                      <p>
                         <label for="state">المدينة</label>
-                        <select id="state" name="user_state">
-                           <option value="state"></option>
-                           <option value="abc">القدس</option>
-                           <option value="def">طولكرم</option>
-                           <option value="geh">قلقيلية</option>
-                           <option value="ijk">بيت جالا</option>
-                           <option value="ftg">بيت ساحور</option>
-                           <option value="hjk">أريحا</option>
-                           <option value="kil">سلفيت</option>
-                           <option value="tyu">بيت لحم</option>
-                           <option value="ewt">جنين</option>
-                           <option value="yrt">نابلس</option>
-                           <option value="sef">رام الله والبيرة</option>
-                           <option value="bhj">طوباس</option>
-                           <option value="jki">الخليل</option>
-                           <option value="lop">جنوب الخليل</option>
+                        <select id="state" name="user_state" required>
+                           <option value="">----</option>
+                           <option value="القدس">القدس</option>
+                           <option value="طولكرم">طولكرم</option>
+                           <option value="قلقيلية">قلقيلية</option>
+                           <option value="بيت جالا">بيت جالا</option>
+                           <option value="بيت ساحور">بيت ساحور</option>
+                           <option value="أريحا">أريحا</option>
+                           <option value="سلفيت">سلفيت</option>
+                           <option value="بيت لحم">بيت لحم</option>
+                           <option value="جنين">جنين</option>
+                           <option value="نابلس">نابلس</option>
+                           <option value="رام الله والبيرة">رام الله والبيرة</option>
+                           <option value="طوباس">طوباس</option>
+                           <option value="الخليل">الخليل</option>
+                           <option value="جنوب الخليل">جنوب الخليل</option>
                         </select>
                      </p>
                      <p>
                         <label for="address">العنوان</label>   
-                        <input type="text" id="address" name="user_address">
+                        <input type="text" id="address" name="user_address" required>
                      </p>
                      <p>
-                        <label for="zipcode">رقم المحمول</label>
-                        <input type="text" id="zipcode" name="user_zipcode" required>
+                        <label for="mobile_number">رقم المحمول</label>
+                        <input type="number" id="mobile_number" name="mobile_number" required>
                      </p>
                      <p>
-                        <label for="zipcode">رقم الواتساب</label>
-                        <input type="text" id="zipcode" name="user_zipcode" required>
+                        <label for="whatsapp_number">رقم الواتساب</label>
+                        <input type="number" id="whatsapp_number" name="whatsapp_number" required>
                      </p>
                   </div>
                </fieldset>
@@ -85,61 +85,61 @@
                      <p>موزع الكهرباء في منطقتك</p>
                      <div>
                         <label>
-                        <input type="checkbox" class="radio" value="1" name="fooby[1][]" />شركة كهرباء</label>
+                        <input type="checkbox" class="radio" value="شركة كهرباء" name="distributor" />شركة كهرباء</label>
                         <label>
-                        <input type="checkbox" class="radio" value="1" name="fooby[1][]" />مجلس بلدي</label>
+                        <input type="checkbox" class="radio" value="مجلس بلدي" name="distributor" />مجلس بلدي</label>
                         <label>
-                        <input type="checkbox" class="radio" value="1" name="fooby[1][]" />مجلس قروي</label>
+                        <input type="checkbox" class="radio" value="مجلس قروي" name="distributor" />مجلس قروي</label>
                      </div>
                      <p>نوع العداد</p>
                      <div class="radio-btn">
                         <p>
-                           <input type="radio" id="html" value="html" name="html_format">
+                           <input type="radio" id="html" value="مسبق الدفع" name="counter_type">
                            <label for="html">مسبق الدفع</label>
                         </p>
                         <p>
-                           <input type="radio" id="plain_text" value="plain_text" name="plain_text">
+                           <input type="radio" id="plain_text" value="فاتورة" name="counter_type">
                            <label for="plain_text">فاتورة</label>
                         </p>
                      </div>
                      <p>ما هو معدل إستهلاك الكهرباء الشهري</p>
                      <p>
-                        <select>
-                           <option value="state"></option>
-                           <option value="state">أقل من 100 شيكل</option>
-                           <option value="PickOne">من 100 شيكل إلى 200 شيكل</option>
-                           <option value="Google">من 200 شيكل إلى 300 شيكل</option>
+                        <select name="electricity_consumption" required>
+                           <option value="">----</option>
+                           <option value="أقل من 100 شيكل">أقل من 100 شيكل</option>
+                           <option value="من 100 شيكل إلى 200 شيكل">من 100 شيكل إلى 200 شيكل</option>
+                           <option value="من 200 شيكل إلى 300 شيكل">من 200 شيكل إلى 300 شيكل</option>
                            --
-                           <option value="Bing">من 300 شيكل إلى 400 شيكل</option>
-                           <option value="Social Site">من 400 شيكل إلى 500 شيكل</option>
-                           <option value="Social Site">أكثر من 500 شيكل</option>
+                           <option value="من 300 شيكل إلى 400 شيكل">من 300 شيكل إلى 400 شيكل</option>
+                           <option value="من 400 شيكل إلى 500 شيكل">من 400 شيكل إلى 500 شيكل</option>
+                           <option value="أكثر من 500 شيكل">أكثر من 500 شيكل</option>
                         </select>
                      </p>
                      <p>ملكية السطح</p>
                      <div class="radio-btn">
                         <p>
-                           <input type="radio" id="html" value="html" name="html_format">
+                           <input type="radio" id="html" value="html" name="surface_ownership">
                            <label for="html">ملك</label>
                         </p>
                         <p>
-                           <input type="radio" id="plain_text" value="plain_text" name="plain_text">
+                           <input type="radio" id="plain_text" value="plain_text" name="surface_ownership">
                            <label for="plain_text">إستئجار</label>
                         </p>
                      </div>
                      <p>ما هو نوع سطح المنشأة المنوي تركيب النظام عليها؟</p>
                      <p>
-                        <select>
-                           <option value="state"></option>
-                           <option value="PickOne">باطون</option>
-                           <option value="Google">قرميد</option>
+                        <select name="type_of_roof" required>
+                           <option value="">-----</option>
+                           <option value="باطون">باطون</option>
+                           <option value="قرميد">قرميد</option>
                            --
-                           <option value="Bing">زينكو</option>
-                           <option value="Social Site">خشب</option>
+                           <option value="زينكو">زينكو</option>
+                           <option value="خشب">خشب</option>
                         </select>
                      </p>
                      <p>هل لديك أي ملاحظات أو معلومات تود إعلامنا بها ؟</p>
                      <p>
-                        <textarea id="interest" name="user_interest"></textarea> <br/>
+                        <textarea id="interest" name="user_interest" required></textarea> <br/>
                      </p>
                   </div>
                </fieldset>
@@ -153,4 +153,19 @@
         </form>
       </div>
    </body>
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script>
+      $("input:checkbox").on('click', function() {
+  var $box = $(this);
+  if ($box.is(":checked")) {
+    var group = "input:checkbox[name='" + $box.attr("name") + "']";
+    $(group).prop("checked", false);
+    $box.prop("checked", true);
+  } else {
+    $box.prop("checked", false);
+  }
+});
+   </script>
 </html>
